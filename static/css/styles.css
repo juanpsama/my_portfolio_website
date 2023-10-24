@@ -1,0 +1,24 @@
+:root{
+/* CSS HEX */
+--indigo-dye: #053c5eff;
+--rojo: #db222aff;
+--teal: #1f7a8cff;
+--madder: #a31621ff;
+--columbia-blue: #bfdbf7ff;
+}
+.round-image {
+    width: 200px; /* Set the desired   for the image */
+    height: 200px; /* Set the desired height for the image */
+    border-radius: 50%; /* Make the image round */
+}
+body {
+  font-family: 'Roboto Mono';
+  background-color: var(--columbia-blue);
+}
+.color-text{
+  color: var(--teal);
+}
+#header{
+    padding-top: 5%;
+    /* background-color: var(--madder); */
+}
