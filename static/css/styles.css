@@ -13,10 +13,16 @@
 }
 body {
   font-family: 'Roboto Mono';
-  background-color: var(--columbia-blue);
+  /* background-color: var(--columbia-blue); */
+  background-color: whitesmoke;
 }
 .color-text{
   color: var(--teal);
+}
+#about-container{
+  background-color: var(--indigo-dye);
+  text-align: center;
+  color: whitesmoke;
 }
 #header{
     padding-top: 5%;

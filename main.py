@@ -4,15 +4,15 @@ app = Flask(__name__)
 
 
 @app.route("/")
-def hello_world():
+def about():
     return render_template('index.html')
 
 @app.route('/projects')
-def about_me():
+def projects():
     return render_template('projects.html')
 
 @app.route('/contact')
-def about_me():
+def contact():
     return render_template('contact.html')
 
 if __name__=='__main__':

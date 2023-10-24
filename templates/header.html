@@ -12,15 +12,17 @@
 <body>
     <div class="container" id="header">
         <nav class="nav justify-content-center">
-            <img src="{{url_for('static', filename ='assets/JuanP.jpg')}}" alt="" class="round-image">
+            <a href="{{url_for('about')}}"> 
+                <img src="{{url_for('static', filename ='assets/JuanP.jpg')}}" alt="" class="round-image">
+            </a>
             <div class="d-block p-5">
                 <span class="color-text">
                     <h1><b>Juan P. Sama</b></h1>
                 </span>
                 <div class="d-inline-flex p-3">
-                    <a class="nav-link link-secondary" aria-current="page" href="#">About me</a>
-                    <a class="nav-link link-secondary" href="#">Projects</a>
-                    <a class="nav-link link-secondary" href="#">Contact me</a>
+                    <a class="nav-link link-secondary" aria-current="page" href="{{url_for('about')}}">About me</a>
+                    <a class="nav-link link-secondary" href="{{url_for('projects')}}">Projects</a>
+                    <a class="nav-link link-secondary" href="{{url_for('contact')}}">Contact me</a>
                     <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
                 </div>
             </div>
