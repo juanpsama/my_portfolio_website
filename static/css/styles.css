@@ -18,10 +18,14 @@ body {
 }
 .color-text{
   color: var(--teal);
+  
+}
+h1 {
+  text-shadow: 1px 1px 2px var(--teal);  
 }
 #about-container{
-  background-color: var(--indigo-dye);
-  text-align: center;
+  background-color: var(--teal);
+  text-align: left;
   color: whitesmoke;
 }
 #header{
