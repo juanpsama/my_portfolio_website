@@ -23,15 +23,19 @@ body {
 .btn-btn-custome{
   background-color: var(--columbia-blue);
 }
-h1 {
+h1#name {
   text-shadow: 0px 0px 3px var(--teal);  
+}
+.title{
+  padding: auto;
+  font-size: 65px;
 }
 #about-container{
   background-color: var(--teal);
+  box-shadow: 5px 5px 15px var(--indigo-dye);
   text-align: left;
   color: whitesmoke;
 }
-
 #header{
     padding-top: 5%;
     /* background-color: var(--madder); */

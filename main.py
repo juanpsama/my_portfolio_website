@@ -23,10 +23,9 @@ def about():
 def projects():
     return render_template('projects.html')
 
-@app.route('/contact')
+@app.route('/contact', methods = ['GET', 'POST'])
 def contact():
     contact_form = ContactForm()
-    contact_form.submit(class_ = 'hola')
     return render_template('contact.html', form = contact_form)
 
 if __name__=='__main__':
