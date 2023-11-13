@@ -8,10 +8,16 @@
     <div id="about-container" class="rounded mx-5">
         <div class="container mx-3 p-5">
             <span class="p-5 mx-3">
-                {{ ckeditor.load() }} {{ ckeditor.config(name='message') }} 
                 <!-- with the button_style='btn-custome' I added a custome class to the button 'btn-btn-custom'-->
                 {{render_form(form, button_style='btn-custome')}}
             </span>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                {% for message in messages %}
+                    <p class="flash">{{ message }}</p>
+                {% endfor %}
+                {% endif %}
+            {% endwith %}
         </div>
     </div>
 </div>

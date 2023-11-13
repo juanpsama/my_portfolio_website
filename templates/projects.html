@@ -1,14 +1,28 @@
 
 {% include "header.html" %}
-<div class="container mx-auto">
-    <div class="card">
-        <div class="card-header">
-            Featured
+<div class="container px-5">
+    <div class="row row-cols-2">        
+        <div class="container mx-auto pt-3 col">
+            <div class="card">
+                <img src="{{url_for('static', filename ='assets/JuanP.jpg')}}" alt="ss" style="width: 40px;">
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div> 
+            </div>
         </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="container mx-auto pt-3 col">
+            <div class="card">
+                <div class="card-header">
+                    Nombre del proyecto
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Special title treatment</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>

@@ -1,7 +1,6 @@
 import os 
 
-from flask import Flask, render_template
-
+from flask import Flask, render_template, flash, url_for, redirect
 from forms import ContactForm
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
@@ -25,8 +24,15 @@ def projects():
 
 @app.route('/contact', methods = ['GET', 'POST'])
 def contact():
-    contact_form = ContactForm()
-    return render_template('contact.html', form = contact_form)
+    form = ContactForm()
+    if form.validate_on_submit():
+        print(form.name.data)
+        print(form.email.data)
+        print(form.phone.data)
+        print(form.message.data)
+        flash('Succesfuly send')
+        return redirect(url_for('contact'))
+    return render_template('contact.html', form = form)
 
 if __name__=='__main__':
     app.run(debug=True)
