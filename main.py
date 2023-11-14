@@ -5,6 +5,8 @@ from forms import ContactForm
 from flask_bootstrap import Bootstrap5
 from flask_ckeditor import CKEditor
 
+from send_email import send_email
+
 
 app = Flask(__name__)
 #Set up the Ckeditor field 
@@ -26,10 +28,11 @@ def projects():
 def contact():
     form = ContactForm()
     if form.validate_on_submit():
-        print(form.name.data)
-        print(form.email.data)
-        print(form.phone.data)
-        print(form.message.data)
+        name = form.name.data 
+        email = form.email.data
+        phone = form.phone.data
+        message = form.message.data
+        send_email(name, email, phone, message)
         flash('Succesfuly send')
         return redirect(url_for('contact'))
     return render_template('contact.html', form = form)
