@@ -10,11 +10,7 @@ recipient_email = "samajpablo@gmail.com"
 
 def send_email(name, email, phone, message):
     # Create the MIME object
-    print(name)
-    print(email)
-    print(phone)
-    print(message)
-    body = f"Nombre:{name} \nEmail: {email} \nPhone:{phone} \nMensaje: {message}"
+    body = f"Nombre: {name} \nEmail: {email} \nPhone: {phone} \nMensaje: {message}"
     print(body)
     subject = "Contact from Portfolio WebSite"
     message = MIMEMultipart()
