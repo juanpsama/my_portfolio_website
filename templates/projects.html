@@ -1,29 +1,78 @@
 
 {% include "header.html" %}
 <div class="container px-5">
-    <div class="row row-cols-2">        
-        <div class="container mx-auto pt-3 col">
-            <div class="card">
-                <img src="{{url_for('static', filename ='assets/JuanP.jpg')}}" alt="ss" style="width: 40px;">
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div> 
-            </div>
+  <div class="row row-columns-4 gx-0 justify-content-center">
+  {% for i in range(11) %}
+  <div class="card m-3" style="width: 22rem;">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{url_for('static', filename ='assets/CellAttack_1.gif')}}" class="d-block w-100 rounded" alt="...">
         </div>
-        <div class="container mx-auto pt-3 col">
-            <div class="card">
-                <div class="card-header">
-                    Nombre del proyecto
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+        <div class="carousel-item">
+          <img src="{{url_for('static', filename ='assets/CellAttack_2.jpeg')}}" class="d-block w-100 rounded" alt="...">
         </div>
+        <div class="carousel-item">
+          <img src="{{url_for('static', filename ='assets/CellAttack_3.jpeg')}}" class="d-block w-100 rounded" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+    <div class="card-body">
+      <h5 class="card-title"><b>CellAttack</b></h5>
+      <p class="card-text">
+        CellAttack is an exciting video game crafted with Unity using C#. Dive into the microscopic world where you take on the role of a bacterium trying to survive the onslaught of formidable bacteriophages.
+      </p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <ul class="list-inline">
+        <li class="list-inline-item">
+            <a href="https://github.com/juanpsama">
+                <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x color-text"></i>
+                    <i class="fa-solid fa-code fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+        <li class="list-inline-item">
+            <a href="https://www.linkedin.com/in/juan-pablo-samayoa-9b08b7268">
+                <span class="fa-stack fa-lg">
+                    <i class="fas fa-circle fa-stack-2x color-text" ></i>
+                    <i class="fa-solid fa-play fa-stack-1x fa-inverse"></i>
+                </span>
+            </a>
+        </li>
+    </ul>
+<!--     
+      <a href="https://github.com/juanpsama">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x color-text"></i>
+            <i class="fab fa-github fa-stack-2x fa-inverse"></i>
+        </span>
+      </a> -->
+
+      <!-- <a href="https://github.com/juanpsama">
+        <span class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x color-text"></i>
+            <i class="fab fa-github fa-stack-2x fa-inverse"></i>
+        </span>
+      </a> -->
+
+      <!-- <i class="fa-solid fa-play"></i> -->
+
+    </div>
+  </div>
+  {% endfor %}
 </div>
 {%include "footer.html"%}
