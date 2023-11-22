@@ -1,4 +1,5 @@
 import os 
+import csv
 
 from flask import Flask, render_template, flash, url_for, redirect
 from forms import ContactForm
@@ -7,6 +8,13 @@ from flask_ckeditor import CKEditor
 
 from send_email import send_email
 
+def csv_to_dict(archivo_csv):
+    lista_diccionarios = []
+    with open(archivo_csv, 'r', newline='', encoding='utf-8') as archivo:
+        lector_csv = csv.DictReader(archivo)
+        for fila in lector_csv:
+            lista_diccionarios.append(dict(fila))
+    return lista_diccionarios
 
 app = Flask(__name__)
 #Set up the Ckeditor field 
@@ -21,8 +29,11 @@ def about():
     return render_template('index.html')
 
 @app.route('/projects')
-def projects():
-    return render_template('projects.html')
+def projects():    
+    # Opens a csv with data about the projects
+    file_csv = 'projects.csv'
+    projects_dict = csv_to_dict(file_csv)
+    return render_template('projects.html', projects = projects_dict)
 
 @app.route('/contact', methods = ['GET', 'POST'])
 def contact():

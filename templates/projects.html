@@ -2,76 +2,63 @@
 {% include "header.html" %}
 <div class="container px-5">
   <div class="row row-columns-4 gx-0 justify-content-center">
-  {% for i in range(11) %}
+  {% for project in projects %}
   <div class="card m-3" style="width: 22rem;">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="{{project.name}}" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#{{project.name}}" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#{{project.name}}" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#{{project.name}}" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="{{url_for('static', filename ='assets/CellAttack_1.gif')}}" class="d-block w-100 rounded" alt="...">
+          <img src="{{url_for('static', filename = 'assets/{image}'.format(image = project.first_image) )}}" class="d-block w-100 rounded" alt="{{project.first_image}}">
         </div>
         <div class="carousel-item">
-          <img src="{{url_for('static', filename ='assets/CellAttack_2.jpeg')}}" class="d-block w-100 rounded" alt="...">
+          <img src="{{url_for('static', filename = 'assets/{image}'.format(image = project.second_image) )}}" class="d-block w-100 rounded" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="{{url_for('static', filename ='assets/CellAttack_3.jpeg')}}" class="d-block w-100 rounded" alt="...">
+          <img src="{{url_for('static', filename = 'assets/{image}'.format(image = project.third_image) )}}" class="d-block w-100 rounded" alt="...">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#{{project.name}}" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#{{project.name}}" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
     </div>
     <div class="card-body">
-      <h5 class="card-title"><b>CellAttack</b></h5>
+      <h5 class="card-title"><b>{{project.name}}</b></h5>
       <p class="card-text">
-        CellAttack is an exciting video game crafted with Unity using C#. Dive into the microscopic world where you take on the role of a bacterium trying to survive the onslaught of formidable bacteriophages.
+        {{project.description}}
       </p>
       <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-      <ul class="list-inline">
-        <li class="list-inline-item">
-            <a href="https://github.com/juanpsama">
-                <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x color-text"></i>
-                    <i class="fa-solid fa-code fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-        <li class="list-inline-item">
-            <a href="https://www.linkedin.com/in/juan-pablo-samayoa-9b08b7268">
-                <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x color-text" ></i>
-                    <i class="fa-solid fa-play fa-stack-1x fa-inverse"></i>
-                </span>
-            </a>
-        </li>
-    </ul>
-<!--     
-      <a href="https://github.com/juanpsama">
-        <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x color-text"></i>
-            <i class="fab fa-github fa-stack-2x fa-inverse"></i>
-        </span>
-      </a> -->
-
-      <!-- <a href="https://github.com/juanpsama">
-        <span class="fa-stack fa-lg">
-            <i class="fas fa-circle fa-stack-2x color-text"></i>
-            <i class="fab fa-github fa-stack-2x fa-inverse"></i>
-        </span>
-      </a> -->
-
-      <!-- <i class="fa-solid fa-play"></i> -->
-
     </div>
+    <ul class="list-inline align-bottom container text-center">
+      {%if project.github_url != '' %}
+      <li class="list-inline-item">
+          <a href="{{project.github_url}}">
+              <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x color-text"></i>
+                  <i class="fa-solid fa-code fa-stack-1x fa-inverse"></i>
+              </span>
+          </a>
+      </li>
+      {%endif%}
+      {%if project.play_url != '' %}
+      <li class="list-inline-item">
+          <a href="{{project.play_url}}">
+              <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x color-text" ></i>
+                  <i class="fa-solid fa-play fa-stack-1x fa-inverse"></i>
+              </span>
+          </a>
+      </li>
+      {%endif%}
+  </ul>
   </div>
   {% endfor %}
 </div>
