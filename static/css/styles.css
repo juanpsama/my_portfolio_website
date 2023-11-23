@@ -18,10 +18,17 @@ body {
 }
 .color-text{
   color: var(--teal);
-  
+}
+.color-text-second{
+  color: var(--indigo-dye);
 }
 .btn-btn-custome{
   background-color: var(--columbia-blue);
+  color: var(--indigo-dye);
+}
+.blue-bg{
+  background-color: var(--teal);
+  color: whitesmoke;
 }
 .name {
   text-shadow: 0px 0px 3px var(--teal);  
